@@ -3,7 +3,7 @@ https://core.telegram.org/tdlib/docs/td__json__client_8h.html#a45cd6979ada11b769
 
 The main TDLib API is fully-asynchronous. An Application can send a request to 
 TDLib through `ClientManager.send` method and receive a response asynchronously through the 
-`ClientManager.receive`` method when it becomes available. The exact naming of these methods 
+`ClientManager.receive` method when it becomes available. The exact naming of these methods 
 and the way in which requests are matched with responses is different for different TDLib interfaces, 
 but the concept as a whole remains the same. For example, in TDLib JSON interface these methods are 
 called `td_send` and `td_receive`, and their `@extra` field must be used to match requests with the corresponding responses.
