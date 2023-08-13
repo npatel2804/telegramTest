@@ -1,31 +1,31 @@
 https://core.telegram.org/tdlib/getting-started
 https://core.telegram.org/tdlib/docs/td__json__client_8h.html#a45cd6979ada11b7690d9dcb1ddc841a0
 
-@extra --> The main TDLib API is fully-asyncronous. An Application can send a request to 
-TDLib through ClientManager.send method and receive a response asynchronously through the 
-ClientManager.receive method when it becomes available. The exact naming of these methods 
+The main TDLib API is fully-asynchronous. An Application can send a request to 
+TDLib through `ClientManager.send` method and receive a response asynchronously through the 
+`ClientManager.receive`` method when it becomes available. The exact naming of these methods 
 and the way in which requests are matched with responses is different for different TDLib interfaces, 
 but the concept as a whole remains the same. For example, in TDLib JSON interface these methods are 
-called td_send and td_receive, and their @extra field must be used to match requests with the corresponding responses.
+called `td_send` and `td_receive`, and their `@extra` field must be used to match requests with the corresponding responses.
 
 
-json request received from (client *Client) SendAndCatch:
+json request received from `(client *Client) SendAndCatch`:
 
-result : {Data:map[@extra:zTDvydqdKrlbKPbnIJkjKyJZHRYrJibx @type:authorizationStateWaitTdlibParameters] Raw:[123 ]}
+Result : `{Data:map[@extra:zxxxxxxxx @type:authorizationStateWaitTdlibParameters] Raw:[123 ]}`
 
-string(result.Raw) = {"@type":"authorizationStateWaitTdlibParameters","@extra":"zTDvydqdKrlbKPbnIJkjKyJZHRYrJibx"}
+string(result.Raw) = `{"@type":"authorizationStateWaitTdlibParameters","@extra":"zxxxxxxxxxxxxxbx"}`
 or 
-string(result.Raw) = {"@type":"authorizationStateWaitEncryptionKey","is_encrypted":true,"@extra":"kdDHiohEDdhmcKhKFeJJhZBWaQCIYbOP"}
+string(result.Raw) = `{"@type":"authorizationStateWaitEncryptionKey","is_encrypted":true,"@extra":"zxxxxxxxxxxxxxbx"}`
 
 
 at receiving end Value of @type can be one of the below:
 
-@type:authorizationStateWaitPhoneNumber, @type":"authorizationStateWaitTdlibParameters , @type:authorizationStateWaitEncryptionKey
+`@type:authorizationStateWaitPhoneNumber`, `@type":"authorizationStateWaitTdlibParameters` , `@type:authorizationStateWaitEncryptionKey`
 
 
 at sending end Value of @type can be one of the below:
 
-"@type": "getAuthorizationState"
+`"@type": "getAuthorizationState"`
 
 
 
